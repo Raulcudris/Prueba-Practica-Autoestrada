@@ -17,26 +17,30 @@ namespace Producto.Infrastructure.Data.Configurations
             builder.HasKey(e => e.Codigo_Producto);
             builder.Property(e => e.Codigo_Producto)
                     .HasColumnName("Codigo_Producto");
+
             builder.Property(e => e.Descripcion)
                     .HasColumnName("Descripcion")
                     .IsRequired()
                     .HasMaxLength(250)
                     .IsUnicode(false);
+
             builder.Property(e => e.Estado_Producto)
                     .IsRequired()
                     .HasMaxLength(50)
                     .IsUnicode(false)
                     .HasColumnName("Estado_Producto");
+
             builder.Property(e => e.Fecha_Fabricacion)
                     .HasColumnType("date")
                     .HasColumnName("Fecha_Fabricacion");
+
             builder.Property(e => e.Fecha_Validez)
                     .HasColumnType("date")
-                     .HasColumnName("Fecha_Fabricacion");
+                     .HasColumnName("Fecha_Validez");
+
             builder.Property(e => e.Codigo_Proveedor)
                     .IsRequired()
-                    .HasColumnName("Codigo_Proveedor");
-          
+                    .HasColumnName("Codigo_Proveedor");          
         }
     
     }

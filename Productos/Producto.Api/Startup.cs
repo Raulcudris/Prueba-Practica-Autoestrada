@@ -1,12 +1,18 @@
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using Producto.Core.Interfaces;
+using Producto.Infrastructure.Data;
+using Producto.Infrastructure.Filters;
+using Producto.Infrastructure.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,17 +32,58 @@ namespace Producto.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //Aqui añadimos el cors para habilitar permisos a React para la api
+            services.AddCors();
+
+            //Mapear desde la Capa Infrastructure
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
+            //Serializar el Json
+            services.AddControllers().AddNewtonsoftJson(options =>
+            {
+                options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
+            }).ConfigureApiBehaviorOptions(options =>
+            {
+                //Validando la clase Filters en Infrastructure
+                options.SuppressModelStateInvalidFilter = true;
+            });
+
+            //Aplicacion de Inyeccion de Dependencia
+            services.AddTransient<IProductsRepository, ProductsRepository>();
+            services.AddTransient<IProvidersRepository, ProvidersRepository>();
+
+            //Configurar el Filter
+            services.AddMvc(options =>
+            {
+                //Llamado a la Carpeta Filter en infrastructure
+                options.Filters.Add<ValidationFilter>();
+            }).AddFluentValidation(option => {
+                //Llamado de Distintas Validaciones en el metodo Validators(Infrastructure)
+                option.RegisterValidatorsFromAssemblies(AppDomain.CurrentDomain.GetAssemblies());
+            });
+
+            //Añadimos el context de la base de Datos
+            services.AddDbContext<ProductoApiContext>(options =>
+            options.UseSqlServer(Configuration.GetConnectionString("Conexion")));
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Producto.Api", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Productos Api", Version = "v1" });
             });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            //Aqui añadimos el cors para habilitar permisos a React para la api
+            app.UseCors(options =>
+            {
+                options.WithOrigins("http://localhost:3000");
+                options.AllowAnyMethod();
+                options.AllowAnyHeader();
+            });
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

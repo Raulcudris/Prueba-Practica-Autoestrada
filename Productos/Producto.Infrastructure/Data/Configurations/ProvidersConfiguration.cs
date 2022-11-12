@@ -28,7 +28,8 @@ namespace Producto.Infrastructure.Data.Configurations
                     .IsUnicode(false)
                     .HasColumnName("Descripcion");
             builder.Property(e => e.Telefono)
-                    .HasColumnName("Telefono");
+                    .HasColumnName("Telefono")
+                    .IsRequired();
 
         }
     }

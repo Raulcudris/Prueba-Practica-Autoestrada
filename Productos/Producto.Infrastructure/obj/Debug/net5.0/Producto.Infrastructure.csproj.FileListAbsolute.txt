@@ -13,3 +13,6 @@ F:\Proyectos .Net\Prueba-Practica-Autoestrada\Productos\Producto.Infrastructure\
 F:\Proyectos .Net\Prueba-Practica-Autoestrada\Productos\Producto.Infrastructure\bin\Debug\net5.0\Producto.Infrastructure.runtimeconfig.json
 F:\Proyectos .Net\Prueba-Practica-Autoestrada\Productos\Producto.Infrastructure\bin\Debug\net5.0\Producto.Infrastructure.runtimeconfig.dev.json
 F:\Proyectos .Net\Prueba-Practica-Autoestrada\Productos\Producto.Infrastructure\obj\Debug\net5.0\Producto.Infrastructure.genruntimeconfig.cache
+F:\Proyectos .Net\Prueba-Practica-Autoestrada\Productos\Producto.Infrastructure\bin\Debug\net5.0\Producto.Core.dll
+F:\Proyectos .Net\Prueba-Practica-Autoestrada\Productos\Producto.Infrastructure\bin\Debug\net5.0\Producto.Core.pdb
+F:\Proyectos .Net\Prueba-Practica-Autoestrada\Productos\Producto.Infrastructure\obj\Debug\net5.0\Producto.Infrastructure.csproj.CopyComplete
