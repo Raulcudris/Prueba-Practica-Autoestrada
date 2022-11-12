@@ -4,14 +4,14 @@
     "F:\\Proyectos .Net\\Prueba-Practica-Autoestrada\\Productos\\Producto.Infrastructure\\Producto.Infrastructure.csproj": {}
   },
   "projects": {
-    "F:\\Proyectos .Net\\Prueba-Practica-Autoestrada\\Productos\\Producto.Infrastructure\\Producto.Infrastructure.csproj": {
+    "F:\\Proyectos .Net\\Prueba-Practica-Autoestrada\\Productos\\Producto.Core\\Producto.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\Proyectos .Net\\Prueba-Practica-Autoestrada\\Productos\\Producto.Infrastructure\\Producto.Infrastructure.csproj",
-        "projectName": "Producto.Infrastructure",
-        "projectPath": "F:\\Proyectos .Net\\Prueba-Practica-Autoestrada\\Productos\\Producto.Infrastructure\\Producto.Infrastructure.csproj",
+        "projectUniqueName": "F:\\Proyectos .Net\\Prueba-Practica-Autoestrada\\Productos\\Producto.Core\\Producto.Core.csproj",
+        "projectName": "Producto.Core",
+        "projectPath": "F:\\Proyectos .Net\\Prueba-Practica-Autoestrada\\Productos\\Producto.Core\\Producto.Core.csproj",
         "packagesPath": "C:\\Users\\MAKIIA-PC04\\.nuget\\packages\\",
-        "outputPath": "F:\\Proyectos .Net\\Prueba-Practica-Autoestrada\\Productos\\Producto.Infrastructure\\obj\\",
+        "outputPath": "F:\\Proyectos .Net\\Prueba-Practica-Autoestrada\\Productos\\Producto.Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -45,6 +45,98 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.407\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "F:\\Proyectos .Net\\Prueba-Practica-Autoestrada\\Productos\\Producto.Infrastructure\\Producto.Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\Proyectos .Net\\Prueba-Practica-Autoestrada\\Productos\\Producto.Infrastructure\\Producto.Infrastructure.csproj",
+        "projectName": "Producto.Infrastructure",
+        "projectPath": "F:\\Proyectos .Net\\Prueba-Practica-Autoestrada\\Productos\\Producto.Infrastructure\\Producto.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\MAKIIA-PC04\\.nuget\\packages\\",
+        "outputPath": "F:\\Proyectos .Net\\Prueba-Practica-Autoestrada\\Productos\\Producto.Infrastructure\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\MAKIIA-PC04\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "F:\\Proyectos .Net\\Prueba-Practica-Autoestrada\\Productos\\Producto.Core\\Producto.Core.csproj": {
+                "projectPath": "F:\\Proyectos .Net\\Prueba-Practica-Autoestrada\\Productos\\Producto.Core\\Producto.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[11.0.1, )"
+            },
+            "FluentValidation.AspNetCore": {
+              "target": "Package",
+              "version": "[10.3.6, )"
+            },
+            "Microsoft.AspNetCore.Mvc.Abstractions": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Mvc.Core": {
+              "target": "Package",
+              "version": "[2.2.5, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
