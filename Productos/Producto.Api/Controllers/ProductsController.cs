@@ -5,6 +5,7 @@ using Producto.Api.Responses;
 using Producto.Core.DTOs;
 using Producto.Core.Entities;
 using Producto.Core.Interfaces;
+using Producto.Core.QueryFilters;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,18 +30,15 @@ namespace Producto.Api.Controllers
             _mapper = mapper;
         }
 
-
-
         //Buscar todos los productos Creados base de Datos
         [HttpGet]
-        public async Task<IActionResult> GetProducts()
+        public IActionResult GetProducts([FromQuery]ProductsQueryFilter filters)
         {
-            var products = await _productService.GetProducts();
+            var products =  _productService.GetProducts(filters);
             var productsDtos = _mapper.Map<IEnumerable<ProductsDto>>(products);
             var response = new ApiResponse<IEnumerable<ProductsDto>>(productsDtos);
             return Ok(response);
         }
-
 
         //Buscar un Producto por ID
         [HttpGet("{id}")]
@@ -73,7 +71,7 @@ namespace Producto.Api.Controllers
         public async Task<IActionResult> UpdateProduct(int id, ProductsDto productsDto)
         {
             var product = _mapper.Map<Products>(productsDto);
-            product.Codigo_Producto = id;
+            product.Id = id;
 
            var result = await _productService.UpdateProduct(product);
 

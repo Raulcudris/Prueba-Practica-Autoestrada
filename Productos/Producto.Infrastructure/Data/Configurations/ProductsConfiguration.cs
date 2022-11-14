@@ -14,8 +14,8 @@ namespace Producto.Infrastructure.Data.Configurations
         public void Configure(EntityTypeBuilder<Products> builder)
         {
             builder.ToTable("Producto");
-            builder.HasKey(e => e.Codigo_Producto);
-            builder.Property(e => e.Codigo_Producto)
+            builder.HasKey(e => e.Id);
+            builder.Property(e => e.Id)
                     .HasColumnName("Codigo_Producto");
 
             builder.Property(e => e.Descripcion)

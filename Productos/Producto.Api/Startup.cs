@@ -40,7 +40,9 @@ namespace Producto.Api
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
             //Serializar el Json
-            services.AddControllers().AddNewtonsoftJson(options =>
+            services.AddControllers(options => {
+                options.Filters.Add<GlobalExceptionFilter>();
+            }).AddNewtonsoftJson(options =>
             {
                 options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
             }).ConfigureApiBehaviorOptions(options =>
@@ -50,11 +52,9 @@ namespace Producto.Api
             });
 
             //Aplicacion de Inyeccion de Dependencia
-            services.AddTransient<IProductsRepository, ProductsRepository>();
-            services.AddTransient<IProvidersRepository, ProvidersRepository>();
             services.AddTransient<IProductsService, ProductsService>();
-
-
+            services.AddTransient(typeof(IRepository<>),typeof(BaseRepository<>));
+            services.AddTransient<IUnitOfWork, UnitOfWork>();
 
             //Configurar el Filter
             services.AddMvc(options =>

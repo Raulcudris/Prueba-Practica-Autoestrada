@@ -1,4 +1,6 @@
-﻿using Producto.Core.Entities;
+﻿using Producto.Core.CustomEntities;
+using Producto.Core.Entities;
+using Producto.Core.QueryFilters;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -7,7 +9,7 @@ namespace Producto.Core.Interfaces
     public interface IProductsService
     {
         //Obtener todos los productos
-        Task<IEnumerable<Products>> GetProducts();
+        PagedList<Products> GetProducts(ProductsQueryFilter filters);
 
         //Obtener un producto por Id
         Task<Products> GetProduct(int id);

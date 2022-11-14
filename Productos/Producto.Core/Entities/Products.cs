@@ -7,10 +7,12 @@ using System.Threading.Tasks;
 
 namespace Producto.Core.Entities
 {
-    public class Products
+    public class Products : BaseEntity
     {
         //Codigo del Producto
-        public int Codigo_Producto { get; set; }
+        // public int Codigo_Producto { get; set; }
+        public int Id { get; set; }
+
         //Codigo del Descripcion
 
         public string Descripcion { get; set; }

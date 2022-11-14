@@ -10,7 +10,7 @@ namespace Producto.Core.DTOs
     public class ProductsDto
     {
         [Required]
-        //Descripcion del Producto
+        //Descripcion
         public string Descripcion { get; set; }
         [Required]
         //Estado del Producto

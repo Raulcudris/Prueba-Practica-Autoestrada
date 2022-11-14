@@ -10,61 +10,41 @@ using System.Threading.Tasks;
 
 namespace Producto.Infrastructure.Repositories
 {
-    public class ProductsRepository : IProductsRepository
+    public class ProductsRepository : BaseRepository<Products>, IProductsRepository
     {
-        //aqui utilizamos inyeccion de dependencia
-        private readonly ProductoApiContext _context;
-
-        public ProductsRepository(ProductoApiContext context)
+        public ProductsRepository(ProductoApiContext context): base(context)
         {
-            _context = context;
+
         }
 
-
-        //Obtenemos todos los productos
-        public async Task<IEnumerable<Products>> GetProducts()
+        public Task<bool> DeleteProduct(int id)
         {
-            var products = await _context.Products.ToListAsync();
-            await Task.Delay(10);
-            return products;
+            throw new NotImplementedException();
         }
 
-        //Obtenemos un producto
-        public async Task<Products> GetProduct(int id)
+        public Task<Products> GetProduct(int id)
         {
-            var product = await _context.Products.FirstOrDefaultAsync(x => x.Codigo_Producto == id);
-            return product;
+            throw new NotImplementedException();
         }
 
-        //Insertamos un producto 
-        public async Task InsertProduct(Products products)
+        public Task<IEnumerable<Products>> GetProducts()
         {
-            _context.Products.Add(products);
-            await _context.SaveChangesAsync();
+            throw new NotImplementedException();
         }
 
-        //Actualizamos un producto 
-        public async Task<bool> UpdateProduct(Products product)
+        public async Task<IEnumerable<Products>> GetProductsById(int productId)
         {
-            var currentProduct = await GetProduct(product.Codigo_Producto);
-
-            currentProduct.Descripcion = product.Descripcion;
-            currentProduct.Estado_Producto = product.Estado_Producto;
-            currentProduct.Fecha_Fabricacion = product.Fecha_Fabricacion;
-            currentProduct.Fecha_Validez = product.Fecha_Validez;
-            currentProduct.Codigo_Proveedor = product.Codigo_Proveedor;
-
-            int rows = await _context.SaveChangesAsync();
-            return rows > 0;
+            return await _entities.Where(x => x.Id == productId).ToListAsync();
         }
 
-        //Eliminamos un producto 
-        public async Task<bool> DeleteProduct(int id)
+        public Task InsertProduct(Products products)
         {
-            var currentProduct = await GetProduct(id);
-            _context.Products.Remove(currentProduct);
-            int rows = await _context.SaveChangesAsync();
-            return rows > 0;
+            throw new NotImplementedException();
+        }
+
+        public Task<bool> UpdateProduct(Products products)
+        {
+            throw new NotImplementedException();
         }
     }
 }

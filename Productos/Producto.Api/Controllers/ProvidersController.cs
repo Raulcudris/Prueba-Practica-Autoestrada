@@ -60,7 +60,7 @@ namespace Producto.Api.Controllers
         public async Task<IActionResult> UpdateProvider(int id, ProvidersDto providersDto)
         {
             var provider = _mapper.Map<Providers>(providersDto);
-            provider.Codigo_Proveedor = id;
+            provider.Id = id;
 
             await _providersRepository.UpdateProvider(provider);
             return Ok(provider);
