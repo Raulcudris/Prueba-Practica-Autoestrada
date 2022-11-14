@@ -3,11 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.32413.511
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Producto.Core", "Producto.Core\Producto.Core.csproj", "{22FED618-FF77-4DA1-9424-51B734884997}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Producto.Core", "Producto.Core\Producto.Core.csproj", "{22FED618-FF77-4DA1-9424-51B734884997}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Producto.Infrastructure", "Producto.Infrastructure\Producto.Infrastructure.csproj", "{58AEB8AC-45D9-4C2D-B39E-E02C5579C7EA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Producto.Infrastructure", "Producto.Infrastructure\Producto.Infrastructure.csproj", "{58AEB8AC-45D9-4C2D-B39E-E02C5579C7EA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Producto.Api", "Producto.Api\Producto.Api.csproj", "{6DFEC152-0825-476C-9101-CE5BA31BF6D0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Producto.Api", "Producto.Api\Producto.Api.csproj", "{6DFEC152-0825-476C-9101-CE5BA31BF6D0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{16B5E984-8481-41B6-9301-564183739DA6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Productos.UnitTest", "Productos.UnitTest\Productos.UnitTest.csproj", "{FD198F57-1927-4778-A5D9-EDCCD98C6BD6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,9 +31,16 @@ Global
 		{6DFEC152-0825-476C-9101-CE5BA31BF6D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6DFEC152-0825-476C-9101-CE5BA31BF6D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6DFEC152-0825-476C-9101-CE5BA31BF6D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD198F57-1927-4778-A5D9-EDCCD98C6BD6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD198F57-1927-4778-A5D9-EDCCD98C6BD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD198F57-1927-4778-A5D9-EDCCD98C6BD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD198F57-1927-4778-A5D9-EDCCD98C6BD6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FD198F57-1927-4778-A5D9-EDCCD98C6BD6} = {16B5E984-8481-41B6-9301-564183739DA6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {60CB0A51-BDFE-4AEA-AADE-699863F97402}

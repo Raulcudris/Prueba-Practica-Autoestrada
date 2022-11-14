@@ -10,6 +10,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using Producto.Core.Interfaces;
+using Producto.Core.Services;
 using Producto.Infrastructure.Data;
 using Producto.Infrastructure.Filters;
 using Producto.Infrastructure.Repositories;
@@ -51,6 +52,9 @@ namespace Producto.Api
             //Aplicacion de Inyeccion de Dependencia
             services.AddTransient<IProductsRepository, ProductsRepository>();
             services.AddTransient<IProvidersRepository, ProvidersRepository>();
+            services.AddTransient<IProductsService, ProductsService>();
+
+
 
             //Configurar el Filter
             services.AddMvc(options =>
