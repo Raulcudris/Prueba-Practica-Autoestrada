@@ -10,8 +10,7 @@ namespace Producto.Core.Interfaces
     public  interface IUnitOfWork : IDisposable
     {
        IProductsRepository ProductsRepository { get; }
-
-        IRepository<Providers> ProvidersRepository { get; }
+        IProvidersRepository ProvidersRepository { get; }
         void SaveChanges();
         Task SaveChangesAsync();
 

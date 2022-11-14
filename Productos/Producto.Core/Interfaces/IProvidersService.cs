@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Producto.Core.Interfaces
 {
-    public interface IProvidersRepository: IRepository<Providers>
+    public interface IProvidersService
     {
         //Obtener todos los proveedores
         Task<IEnumerable<Providers>> GetProviders();
@@ -16,10 +16,10 @@ namespace Producto.Core.Interfaces
         Task<Providers> GetProvider(int id);
 
         //Insertar un proveedor
-        Task InsertProvider(Providers providers);
+        Task InsertProvider(Providers products);
 
         //Actualizar un proveedor
-        Task<bool> UpdateProvider(Providers providers);
+        Task<bool> UpdateProvider(Providers products);
 
         //Eliminar un proveedores
         Task<bool> DeleteProvider(int id);

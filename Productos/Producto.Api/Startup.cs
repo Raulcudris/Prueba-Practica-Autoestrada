@@ -56,6 +56,7 @@ namespace Producto.Api
 
             //Aplicacion de Inyeccion de Dependencia
             services.AddTransient<IProductsService, ProductsService>();
+            services.AddTransient<IProvidersService, Provu>();
             services.AddTransient(typeof(IRepository<>),typeof(BaseRepository<>));
             services.AddTransient<IUnitOfWork, UnitOfWork>();
             services.AddSingleton<IUriService>(provider => {
