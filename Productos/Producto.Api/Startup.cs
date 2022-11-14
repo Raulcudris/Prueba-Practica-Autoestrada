@@ -1,6 +1,7 @@
 using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -13,7 +14,9 @@ using Producto.Core.Interfaces;
 using Producto.Core.Services;
 using Producto.Infrastructure.Data;
 using Producto.Infrastructure.Filters;
+using Producto.Infrastructure.Interfaces;
 using Producto.Infrastructure.Repositories;
+using Producto.Infrastructure.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -55,6 +58,12 @@ namespace Producto.Api
             services.AddTransient<IProductsService, ProductsService>();
             services.AddTransient(typeof(IRepository<>),typeof(BaseRepository<>));
             services.AddTransient<IUnitOfWork, UnitOfWork>();
+            services.AddSingleton<IUriService>(provider => {
+                var accesor = provider.GetRequiredService<IHttpContextAccessor>();
+                var request = accesor.HttpContext.Request;
+                var absoluteUri = string.Concat(request.Scheme, "://", request.Host.ToUriComponent());
+                return new UriService(absoluteUri);
+            } );
 
             //Configurar el Filter
             services.AddMvc(options =>

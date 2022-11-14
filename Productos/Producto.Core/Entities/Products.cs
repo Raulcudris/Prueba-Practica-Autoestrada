@@ -9,11 +9,9 @@ namespace Producto.Core.Entities
 {
     public class Products : BaseEntity
     {
-        //Codigo del Producto
-        // public int Codigo_Producto { get; set; }
-        public int Id { get; set; }
 
-        //Codigo del Descripcion
+        //Codigo del Producto
+        public int Id { get; set; }
 
         public string Descripcion { get; set; }
 

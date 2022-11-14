@@ -27,6 +27,9 @@ namespace Producto.Core.Services
 
         public PagedList<Products> GetProducts(ProductsQueryFilter filters)
         {
+            filters.PageNumber = filters.PageNumber == 0 ? 1 : filters.PageNumber;
+            filters.PageSize = filters.PageSize == 0 ? 20 : filters.PageSize;
+
             var products =  _unitOfWork.ProductsRepository.GetAll();
             if (filters.productId != null)
             {
@@ -56,11 +59,19 @@ namespace Producto.Core.Services
                      
 
             await _unitOfWork.ProductsRepository.Add(products);
+            await _unitOfWork.SaveChangesAsync();
         }
 
         public async Task<bool> UpdateProduct(Products products)
         {
-             _unitOfWork.ProductsRepository.Update(products);
+            var existingProduct = await _unitOfWork.ProductsRepository.GetById(products.Id);
+            existingProduct.Descripcion = products.Descripcion;
+            existingProduct.Estado_Producto = products.Estado_Producto;
+            existingProduct.Fecha_Fabricacion = products.Fecha_Fabricacion;
+            existingProduct.Fecha_Validez = products.Fecha_Validez;
+            existingProduct.Codigo_Proveedor = products.Codigo_Proveedor;
+
+            _unitOfWork.ProductsRepository.Update(existingProduct);
              await _unitOfWork.SaveChangesAsync();
             return true;
         }
@@ -68,6 +79,7 @@ namespace Producto.Core.Services
         public async Task<bool> DeleteProduct(int id)
         {
             await _unitOfWork.ProductsRepository.Delete(id);
+            await _unitOfWork.SaveChangesAsync();
             return true;
         }
 

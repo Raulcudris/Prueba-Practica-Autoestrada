@@ -1,11 +1,14 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using Producto.Api.Responses;
+using Producto.Core.CustomEntities;
 using Producto.Core.DTOs;
 using Producto.Core.Entities;
 using Producto.Core.Interfaces;
 using Producto.Core.QueryFilters;
+using Producto.Infrastructure.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,21 +25,42 @@ namespace Producto.Api.Controllers
         //Inyeccion de Dependencia
         private readonly IProductsService _productService;
         private readonly IMapper _mapper;
+        private readonly IUriService _uriService;
+
 
         //Inyeccion de Dependencia
-        public ProductsController(IProductsService productService, IMapper mapper)
+        public ProductsController(IProductsService productService, IMapper mapper, IUriService uriService)
         {
             _productService = productService;
             _mapper = mapper;
+            _uriService = uriService;
         }
 
+        [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(ApiResponse<IEnumerable<ProductsDto>>))]
+        [ProducesResponseType((int)HttpStatusCode.BadRequest)]
         //Buscar todos los productos Creados base de Datos
-        [HttpGet]
-        public IActionResult GetProducts([FromQuery]ProductsQueryFilter filters)
+        [HttpGet(Name = nameof(GetProducts))]
+        public IActionResult GetProducts([FromQuery] ProductsQueryFilter filters)
         {
-            var products =  _productService.GetProducts(filters);
+            var products = _productService.GetProducts(filters);
             var productsDtos = _mapper.Map<IEnumerable<ProductsDto>>(products);
-            var response = new ApiResponse<IEnumerable<ProductsDto>>(productsDtos);
+
+            var metadata = new Metadata
+            {
+                TotalCount = products.TotalCount,
+                PageSize = products.PageSize,
+                CurrentPage = products.CurrentPage,
+                TotalPages = products.TotalPages,
+                NextPageUrl = _uriService.GetPostPaginationUri(filters, Url.RouteUrl(nameof(GetProducts))).ToString(),
+                PreviousPageUrl = _uriService.GetPostPaginationUri(filters, Url.RouteUrl(nameof(GetProducts))).ToString()
+            };
+
+            var response = new ApiResponse<IEnumerable<ProductsDto>>(productsDtos)
+            {
+                Meta = metadata
+             };
+
+            Response.Headers.Add("X-Paginacion", JsonConvert.SerializeObject(metadata));
             return Ok(response);
         }
 
