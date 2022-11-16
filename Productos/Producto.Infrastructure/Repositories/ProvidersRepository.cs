@@ -10,23 +10,17 @@ using System.Threading.Tasks;
 
 namespace Producto.Infrastructure.Repositories
 {
-    public class ProvidersRepository: BaseRepository<Providers>, IProvidersRepository
+    public class ProvidersRepository : BaseRepositoryProvider<Providers>, IProvidersRepository
     {
-        public ProvidersRepository(ProductoApiContext context) : base(context)
-        {
+        public ProvidersRepository(ProductoApiContext context) : base(context) { }
+       
 
-        }
-        public Task<IEnumerable<Providers>> GetProviders()
+        public Task<bool> DeleteProvider(int providerId)
         {
             throw new NotImplementedException();
-        }
+        }    
+     
 
-        public async Task<IEnumerable<Providers>> GetProviderById(int Provider_Id)
-        {
-            return await _entities.Where(x => x.Id == Provider_Id).ToListAsync();
-        }
-
-      
         public Task InsertProvider(Providers providers)
         {
             throw new NotImplementedException();
@@ -37,7 +31,13 @@ namespace Producto.Infrastructure.Repositories
             throw new NotImplementedException();
         }
 
-        public Task<bool> DeleteProvider(int id)
+        public async Task<IEnumerable<Providers>> GetProviderById(int providerId)
+        {
+            return await _entities.Where(x => x.Provider_Id == providerId).ToListAsync();
+
+        }
+
+        public Task<IEnumerable<Providers>> GetProviders()
         {
             throw new NotImplementedException();
         }

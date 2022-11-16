@@ -56,14 +56,26 @@ namespace Producto.Api
 
             //Aplicacion de Inyeccion de Dependencia
             services.AddTransient<IProductsService, ProductsService>();
-            services.AddTransient<IProvidersService, Provu>();
-            services.AddTransient(typeof(IRepository<>),typeof(BaseRepository<>));
-            services.AddTransient<IUnitOfWork, UnitOfWork>();
-            services.AddSingleton<IUriService>(provider => {
+            services.AddTransient<IProvidersService, ProvidersService>();
+            services.AddTransient(typeof(IRepositoryProduct<>),typeof(BaseRepositoryProduct<>));
+            services.AddTransient(typeof(IRepositoryProvider<>), typeof(BaseRepositoryProvider<>));
+
+            services.AddTransient<IUnitOfWorkProduct, UnitOfWorkProduct>();
+            services.AddTransient<IUnitOfWorkProvider, UnitOfWorkProvider>();
+
+            services.AddSingleton<IUriServiceProviders>(provider => {
                 var accesor = provider.GetRequiredService<IHttpContextAccessor>();
                 var request = accesor.HttpContext.Request;
                 var absoluteUri = string.Concat(request.Scheme, "://", request.Host.ToUriComponent());
-                return new UriService(absoluteUri);
+                return new UriServiceProvider(absoluteUri);
+            });
+
+
+            services.AddSingleton<IUriServiceProducts>(provider => {
+                var accesor = provider.GetRequiredService<IHttpContextAccessor>();
+                var request = accesor.HttpContext.Request;
+                var absoluteUri = string.Concat(request.Scheme, "://", request.Host.ToUriComponent());
+                return new UriServiceProducts(absoluteUri);
             } );
 
             //Configurar el Filter

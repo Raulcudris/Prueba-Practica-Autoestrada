@@ -14,19 +14,22 @@ namespace Producto.Infrastructure.Data.Configurations
         public void Configure(EntityTypeBuilder<Providers> builder)
         {
             builder.ToTable("Proveedor");
-            builder.HasKey(e => e.Id);
-            builder.Property(e => e.Id)
+            builder.HasKey(e => e.Provedor_Id);
+            builder.Property(e => e.Provedor_Id)
                     .HasColumnName("Codigo_Proveedor");
+
             builder.Property(e => e.Nombre)
                     .HasColumnName("Nombre")
                     .IsRequired()
                     .HasMaxLength(250)
                     .IsUnicode(false);
+
             builder.Property(e => e.Descripcion)
                     .IsRequired()
                     .HasMaxLength(250)
                     .IsUnicode(false)
                     .HasColumnName("Descripcion");
+
             builder.Property(e => e.Telefono)
                     .HasColumnName("Telefono")
                     .IsRequired();

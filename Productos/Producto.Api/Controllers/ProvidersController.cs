@@ -1,12 +1,18 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
+using Producto.Api.Responses;
+using Producto.Core.CustomEntities;
 using Producto.Core.DTOs;
 using Producto.Core.Entities;
 using Producto.Core.Interfaces;
+using Producto.Core.QueryFilters;
+using Producto.Infrastructure.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
 
 namespace Producto.Api.Controllers
@@ -17,33 +23,53 @@ namespace Producto.Api.Controllers
     public class ProvidersController : ControllerBase
     {
         //Inyeccion de Dependencia
-        private readonly IProvidersRepository _providersRepository ;
+        private readonly IProvidersService  _providersService;
         private readonly IMapper _mapper;
-
+        private readonly IUriServiceProviders _uriServiceproviders;
 
         //Inyeccion de Dependencia
-        public ProvidersController(IProvidersRepository providersRepository, IMapper mapper)
+        public ProvidersController(IProvidersService providersService, IMapper mapper, IUriServiceProviders uriServiceProviders)
         {
-            _providersRepository = providersRepository;
+            _providersService = providersService;
             _mapper = mapper;
+            _uriServiceproviders = uriServiceProviders;
         }
 
         //Buscar todos los proveedores Creados base de Datos
-        [HttpGet]
-        public async Task<IActionResult> GetProviders()
+        [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(ApiResponse<IEnumerable<ProvidersDto>>))]
+        [ProducesResponseType((int)HttpStatusCode.BadRequest)]
+        [HttpGet(Name = nameof(GetProviders))]
+        public IActionResult GetProviders([FromQuery] ProvidersQueryFilter filters)
         {
-            var providers = await _providersRepository.GetProviders();
+            var providers =  _providersService.GetProviders(filters);
             var providersDtos = _mapper.Map<IEnumerable<ProvidersDto>>(providers);
-            return Ok(providersDtos);
+            var metadata = new Metadata
+            {
+                TotalCount = providers.TotalCount,
+                PageSize = providers.PageSize,
+                CurrentPage = providers.CurrentPage,
+                TotalPages = providers.TotalPages,
+                NextPageUrl = _uriServiceproviders.GetProviderPaginationUri(filters, Url.RouteUrl(nameof(GetProviders))).ToString(),
+                PreviousPageUrl = _uriServiceproviders.GetProviderPaginationUri(filters, Url.RouteUrl(nameof(GetProviders))).ToString()
+            };
+
+            var response = new ApiResponse<IEnumerable<ProvidersDto>>(providersDtos)
+            {
+                Meta = metadata
+            };
+
+            Response.Headers.Add("X-Paginacion", JsonConvert.SerializeObject(metadata));
+            return Ok(response);
         }
 
         //Buscar un proveedor por ID
         [HttpGet("{id}")]
         public async Task<IActionResult> GetProvider(int id)
         {
-            var provider = await _providersRepository.GetProvider(id);
+            var provider = await _providersService.GetProvider(id);
             var providersDtos = _mapper.Map<ProvidersDto>(provider);
-            return Ok(providersDtos);
+            var response = new ApiResponse<ProvidersDto>(providersDtos);
+            return Ok(response);
         }
 
         //Insertar Un proveedor a la base de Datos
@@ -51,8 +77,10 @@ namespace Producto.Api.Controllers
         public async Task<IActionResult> InsertProvider(int id, ProvidersDto providersDto)
         {
             var provider = _mapper.Map<Providers>(providersDto);
-            await _providersRepository.InsertProvider(provider);
-            return Ok(provider);
+            await _providersService.InsertProvider(provider);
+            providersDto = _mapper.Map<ProvidersDto>(provider);
+            var response = new ApiResponse<ProvidersDto>(providersDto);
+            return Ok(response);
         }
 
         //Atualizar Un proveedor Registrado..
@@ -60,18 +88,20 @@ namespace Producto.Api.Controllers
         public async Task<IActionResult> UpdateProvider(int id, ProvidersDto providersDto)
         {
             var provider = _mapper.Map<Providers>(providersDto);
-            provider.Id = id;
+            provider.Provider_Id = id;
 
-            await _providersRepository.UpdateProvider(provider);
-            return Ok(provider);
+            var result = await _providersService.UpdateProvider(provider);
+            var response = new ApiResponse<bool>(result);
+            return Ok(response);
         }
 
         //Elimnar Un proveedor Registrado 
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteProvider(int id)
         {
-            var result = await _providersRepository.DeleteProvider(id);
-            return Ok(result);
+            var result = await _providersService.DeleteProvider(id);
+            var response = new ApiResponse<bool>(result);
+            return Ok(response);
         }
 
 

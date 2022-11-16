@@ -9,7 +9,7 @@ namespace Producto.Core.Interfaces
     public interface IProductsService
     {
         //Obtener todos los productos
-        PagedList<Products> GetProducts(ProductsQueryFilter filters);
+        PagedListProducts<Products> GetProducts(ProductsQueryFilter filters);
 
         //Obtener un producto por Id
         Task<Products> GetProduct(int id);

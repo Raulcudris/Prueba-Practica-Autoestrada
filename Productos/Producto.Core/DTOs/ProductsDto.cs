@@ -9,7 +9,7 @@ namespace Producto.Core.DTOs
 {
     public class ProductsDto
     {
-        public int Id { get; set; }
+        public int Product_Id { get; set; }
         [Required]
         //Descripcion
         public string Descripcion { get; set; }

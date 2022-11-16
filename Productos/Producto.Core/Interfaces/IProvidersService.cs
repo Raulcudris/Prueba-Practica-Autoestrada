@@ -1,4 +1,6 @@
-﻿using Producto.Core.Entities;
+﻿using Producto.Core.CustomEntities;
+using Producto.Core.Entities;
+using Producto.Core.QueryFilters;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,19 +11,19 @@ namespace Producto.Core.Interfaces
 {
     public interface IProvidersService
     {
-        //Obtener todos los proveedores
-        Task<IEnumerable<Providers>> GetProviders();
+        //Obtener todos los Proveedor
+        PagedListProviders<Providers> GetProviders(ProvidersQueryFilter filters);
 
-        //Obtener un proveedor por Id
+        //Obtener un Proveedor por Id
         Task<Providers> GetProvider(int id);
 
-        //Insertar un proveedor
-        Task InsertProvider(Providers products);
+        //Insertar un Proveedor
+        Task InsertProvider(Providers providers);
 
-        //Actualizar un proveedor
-        Task<bool> UpdateProvider(Providers products);
+        //Actualizar un Proveedor
+        Task<bool> UpdateProvider(Providers providers);
 
-        //Eliminar un proveedores
+        //Eliminar un Proveedor
         Task<bool> DeleteProvider(int id);
     }
 }

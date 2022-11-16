@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Producto.Core.Interfaces
 {
-    public interface IProvidersRepository: IRepository<Providers>
+    public interface IProvidersRepository : IRepositoryProvider<Providers>
     {
         //Obtener todos los proveedores
         Task<IEnumerable<Providers>> GetProviders();

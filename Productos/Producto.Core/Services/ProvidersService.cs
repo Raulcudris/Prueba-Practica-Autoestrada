@@ -1,5 +1,7 @@
-﻿using Producto.Core.Entities;
+﻿using Producto.Core.CustomEntities;
+using Producto.Core.Entities;
 using Producto.Core.Interfaces;
+using Producto.Core.QueryFilters;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,36 +12,71 @@ namespace Producto.Core.Services
 {
     public class ProvidersService : IProvidersService
     {
-        private readonly IUnitOfWork _unitOfWork;
+        private readonly IUnitOfWorkProvider _unitOfWorkProvider;
 
-        public ProvidersService(IUnitOfWork unitOfWork)
+        public ProvidersService(IUnitOfWorkProvider unitOfWorkProvider)
         {
-            _unitOfWork = unitOfWork;
-        }
-
-        public Task<bool> DeleteProvider(int id)
-        {
-            throw new NotImplementedException();
+            _unitOfWorkProvider = unitOfWorkProvider;
         }
 
         public async Task<Providers> GetProvider(int id)
         {
-            return await _unitOfWork.ProvidersRepository.GetById(id);
+            return await _unitOfWorkProvider.ProvidersRepository.GetById(id);
         }
 
-        public  Task<IEnumerable<Providers>> GetProviders()
+        public PagedListProviders<Providers> GetProviders(ProvidersQueryFilter filters)
         {
-            var providers = _unitOfWork.ProvidersRepository.GetAll();
+            filters.PageNumber = filters.PageNumber == 0 ? 1 : filters.PageNumber;
+            filters.PageSize = filters.PageSize == 0 ? 20 : filters.PageSize;
+
+            var providers = _unitOfWorkProvider.ProvidersRepository.GetAll();
+
+            if (filters.provedor_Id != null)
+            {
+                providers = providers.Where(x => x.Provider_Id == filters.provedor_Id);
+            }
+
+            if (filters.nombre != null)
+            {
+                providers = providers.Where(x => x.Nombre.ToLower().Contains(filters.nombre.ToLower()));
+            }
+            if (filters.descripcion != null)
+            {
+                providers = providers.Where(x => x.Descripcion.ToLower().Contains(filters.descripcion.ToLower()));
+            }
+
+            var pagedProviders = PagedListProviders<Providers>.Create(providers, filters.PageNumber, filters.PageSize);
+
+
+            return pagedProviders;
         }
 
-        public Task InsertProvider(Providers products)
-        {
-            throw new NotImplementedException();
+        public async Task InsertProvider(Providers providers)
+        {    
+            await _unitOfWorkProvider.ProvidersRepository.Add(providers);
+            await _unitOfWorkProvider.SaveChangesAsync();
         }
 
-        public Task<bool> UpdateProvider(Providers products)
+        public async Task<bool> UpdateProvider(Providers providers)
         {
-            throw new NotImplementedException();
+            var existingProvider = await _unitOfWorkProvider.ProvidersRepository.GetById(providers.Provedor_Id);
+            existingProvider.Nombre = providers.Nombre;
+            existingProvider.Descripcion = providers.Descripcion;
+            existingProvider.Telefono = providers.Telefono;
+
+            _unitOfWorkProvider.ProvidersRepository.Update(existingProvider);
+            await _unitOfWorkProvider.SaveChangesAsync();
+            return true;
         }
+
+        public async Task<bool> DeleteProvider(int id)
+        {
+            await _unitOfWorkProvider.ProvidersRepository.Delete(id);
+            await _unitOfWorkProvider.SaveChangesAsync();
+            return true;
+        }
+
+
+
     }
 }

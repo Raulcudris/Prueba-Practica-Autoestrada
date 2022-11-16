@@ -1,12 +1,12 @@
-F:\Proyectos .Net\Prueba-Practica-Autoestrada\Productos\Producto.Core\obj\Debug\net5.0\Producto.Core.GeneratedMSBuildEditorConfig.editorconfig
-F:\Proyectos .Net\Prueba-Practica-Autoestrada\Productos\Producto.Core\obj\Debug\net5.0\Producto.Core.AssemblyInfoInputs.cache
-F:\Proyectos .Net\Prueba-Practica-Autoestrada\Productos\Producto.Core\obj\Debug\net5.0\Producto.Core.AssemblyInfo.cs
-F:\Proyectos .Net\Prueba-Practica-Autoestrada\Productos\Producto.Core\obj\Debug\net5.0\Producto.Core.csproj.CoreCompileInputs.cache
 F:\Proyectos .Net\Prueba-Practica-Autoestrada\Productos\Producto.Core\bin\Debug\net5.0\Producto.Core.deps.json
 F:\Proyectos .Net\Prueba-Practica-Autoestrada\Productos\Producto.Core\bin\Debug\net5.0\Producto.Core.dll
 F:\Proyectos .Net\Prueba-Practica-Autoestrada\Productos\Producto.Core\bin\Debug\net5.0\ref\Producto.Core.dll
 F:\Proyectos .Net\Prueba-Practica-Autoestrada\Productos\Producto.Core\bin\Debug\net5.0\Producto.Core.pdb
+F:\Proyectos .Net\Prueba-Practica-Autoestrada\Productos\Producto.Core\obj\Debug\net5.0\Producto.Core.csproj.AssemblyReference.cache
+F:\Proyectos .Net\Prueba-Practica-Autoestrada\Productos\Producto.Core\obj\Debug\net5.0\Producto.Core.GeneratedMSBuildEditorConfig.editorconfig
+F:\Proyectos .Net\Prueba-Practica-Autoestrada\Productos\Producto.Core\obj\Debug\net5.0\Producto.Core.AssemblyInfoInputs.cache
+F:\Proyectos .Net\Prueba-Practica-Autoestrada\Productos\Producto.Core\obj\Debug\net5.0\Producto.Core.AssemblyInfo.cs
+F:\Proyectos .Net\Prueba-Practica-Autoestrada\Productos\Producto.Core\obj\Debug\net5.0\Producto.Core.csproj.CoreCompileInputs.cache
 F:\Proyectos .Net\Prueba-Practica-Autoestrada\Productos\Producto.Core\obj\Debug\net5.0\Producto.Core.dll
 F:\Proyectos .Net\Prueba-Practica-Autoestrada\Productos\Producto.Core\obj\Debug\net5.0\ref\Producto.Core.dll
 F:\Proyectos .Net\Prueba-Practica-Autoestrada\Productos\Producto.Core\obj\Debug\net5.0\Producto.Core.pdb
-F:\Proyectos .Net\Prueba-Practica-Autoestrada\Productos\Producto.Core\obj\Debug\net5.0\Producto.Core.csproj.AssemblyReference.cache
