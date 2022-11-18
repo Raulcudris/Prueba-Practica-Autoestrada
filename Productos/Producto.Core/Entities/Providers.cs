@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace Producto.Core.Entities
 {
-    public class Providers : BaseEntityProvider
+    public class Providers : BaseEntity
     {
         //Codigo del Proveedor
-        public int Provedor_Id { get; set; }
+        public int Id { get; set; }
         //Nombre del Proveedor
         public string Nombre { get; set; }
         //Descripcion del proveedor

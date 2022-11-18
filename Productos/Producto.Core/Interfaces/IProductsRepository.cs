@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Producto.Core.Interfaces
 {
-    public interface IProductsRepository: IRepositoryProduct<Products>
+    public interface IProductsRepository: IRepository<Products>
     {
         //Obtener todos los productos
         Task<IEnumerable<Products>> GetProducts();

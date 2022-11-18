@@ -1,9 +1,9 @@
-F:\Proyectos .Net\Prueba-Practica-Autoestrada\Productos\Productos.UnitTest\bin\Debug\net5.0\testhost.dll
 F:\Proyectos .Net\Prueba-Practica-Autoestrada\Productos\Productos.UnitTest\bin\Debug\net5.0\testhost.exe
-F:\Proyectos .Net\Prueba-Practica-Autoestrada\Productos\Productos.UnitTest\bin\Debug\net5.0\Microsoft.TestPlatform.PlatformAbstractions.dll
+F:\Proyectos .Net\Prueba-Practica-Autoestrada\Productos\Productos.UnitTest\bin\Debug\net5.0\testhost.dll
 F:\Proyectos .Net\Prueba-Practica-Autoestrada\Productos\Productos.UnitTest\bin\Debug\net5.0\xunit.runner.visualstudio.dotnetcore.testadapter.dll
 F:\Proyectos .Net\Prueba-Practica-Autoestrada\Productos\Productos.UnitTest\bin\Debug\net5.0\xunit.runner.reporters.netcoreapp10.dll
 F:\Proyectos .Net\Prueba-Practica-Autoestrada\Productos\Productos.UnitTest\bin\Debug\net5.0\xunit.runner.utility.netcoreapp10.dll
+F:\Proyectos .Net\Prueba-Practica-Autoestrada\Productos\Productos.UnitTest\bin\Debug\net5.0\Microsoft.TestPlatform.PlatformAbstractions.dll
 F:\Proyectos .Net\Prueba-Practica-Autoestrada\Productos\Productos.UnitTest\bin\Debug\net5.0\Productos.UnitTest.deps.json
 F:\Proyectos .Net\Prueba-Practica-Autoestrada\Productos\Productos.UnitTest\bin\Debug\net5.0\Productos.UnitTest.runtimeconfig.json
 F:\Proyectos .Net\Prueba-Practica-Autoestrada\Productos\Productos.UnitTest\bin\Debug\net5.0\Productos.UnitTest.runtimeconfig.dev.json

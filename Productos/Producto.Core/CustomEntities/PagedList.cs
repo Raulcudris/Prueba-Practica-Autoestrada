@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Producto.Core.CustomEntities
 {
-    public class PagedListProviders<T> : List<T>
+    public  class PagedList<T> : List<T>
     {
         public int CurrentPage { get; set; }
         public int TotalPages { get; set; }
@@ -17,7 +17,7 @@ namespace Producto.Core.CustomEntities
         public bool HasNextPage => CurrentPage < TotalPages;
         public int? NextPageNumber => HasNextPage ? CurrentPage + 1 : (int?)null;
         public int? PreviousPageNumber => HasPreviousPage ? CurrentPage - 1 : (int?)null;
-        public PagedListProviders(List<T> items, int count, int pageNumber, int pageSize)
+        public PagedList(List<T> items, int count, int pageNumber, int pageSize)
         {
             TotalCount = count;
             PageSize = pageSize;
@@ -26,13 +26,14 @@ namespace Producto.Core.CustomEntities
             AddRange(items);
         }
 
-        public static PagedListProviders<T> Create(IEnumerable<T> source, int pageNumber, int pageSize)
+        public static PagedList<T> Create(IEnumerable<T> source, int pageNumber, int pageSize)
         {
             var count = source.Count();
             var items = source.Skip((pageNumber - 1) * pageSize).Take(pageSize).ToList();
 
-            return new PagedListProviders<T>(items, count, pageNumber, pageSize);
+            return new PagedList<T>(items, count, pageNumber, pageSize);
         }
+
 
     }
 }

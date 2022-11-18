@@ -1,3 +1,8 @@
+F:\Proyectos .Net\Prueba-Practica-Autoestrada\Productos\Producto.Api\obj\Debug\net5.0\Producto.Api.GeneratedMSBuildEditorConfig.editorconfig
+F:\Proyectos .Net\Prueba-Practica-Autoestrada\Productos\Producto.Api\obj\Debug\net5.0\Producto.Api.AssemblyInfoInputs.cache
+F:\Proyectos .Net\Prueba-Practica-Autoestrada\Productos\Producto.Api\obj\Debug\net5.0\Producto.Api.AssemblyInfo.cs
+F:\Proyectos .Net\Prueba-Practica-Autoestrada\Productos\Producto.Api\obj\Debug\net5.0\Producto.Api.csproj.CoreCompileInputs.cache
+F:\Proyectos .Net\Prueba-Practica-Autoestrada\Productos\Producto.Api\obj\Debug\net5.0\Producto.Api.MvcApplicationPartsAssemblyInfo.cache
 F:\Proyectos .Net\Prueba-Practica-Autoestrada\Productos\Producto.Api\bin\Debug\net5.0\appsettings.Development.json
 F:\Proyectos .Net\Prueba-Practica-Autoestrada\Productos\Producto.Api\bin\Debug\net5.0\appsettings.json
 F:\Proyectos .Net\Prueba-Practica-Autoestrada\Productos\Producto.Api\bin\Debug\net5.0\Producto.Api.exe
@@ -136,12 +141,6 @@ F:\Proyectos .Net\Prueba-Practica-Autoestrada\Productos\Producto.Api\bin\Debug\n
 F:\Proyectos .Net\Prueba-Practica-Autoestrada\Productos\Producto.Api\bin\Debug\net5.0\Producto.Infrastructure.pdb
 F:\Proyectos .Net\Prueba-Practica-Autoestrada\Productos\Producto.Api\bin\Debug\net5.0\Producto.Core.pdb
 F:\Proyectos .Net\Prueba-Practica-Autoestrada\Productos\Producto.Api\obj\Debug\net5.0\Producto.Api.csproj.AssemblyReference.cache
-F:\Proyectos .Net\Prueba-Practica-Autoestrada\Productos\Producto.Api\obj\Debug\net5.0\Producto.Api.GeneratedMSBuildEditorConfig.editorconfig
-F:\Proyectos .Net\Prueba-Practica-Autoestrada\Productos\Producto.Api\obj\Debug\net5.0\Producto.Api.AssemblyInfoInputs.cache
-F:\Proyectos .Net\Prueba-Practica-Autoestrada\Productos\Producto.Api\obj\Debug\net5.0\Producto.Api.AssemblyInfo.cs
-F:\Proyectos .Net\Prueba-Practica-Autoestrada\Productos\Producto.Api\obj\Debug\net5.0\Producto.Api.csproj.CoreCompileInputs.cache
-F:\Proyectos .Net\Prueba-Practica-Autoestrada\Productos\Producto.Api\obj\Debug\net5.0\Producto.Api.MvcApplicationPartsAssemblyInfo.cs
-F:\Proyectos .Net\Prueba-Practica-Autoestrada\Productos\Producto.Api\obj\Debug\net5.0\Producto.Api.MvcApplicationPartsAssemblyInfo.cache
 F:\Proyectos .Net\Prueba-Practica-Autoestrada\Productos\Producto.Api\obj\Debug\net5.0\staticwebassets\Producto.Api.StaticWebAssets.Manifest.cache
 F:\Proyectos .Net\Prueba-Practica-Autoestrada\Productos\Producto.Api\obj\Debug\net5.0\staticwebassets\Producto.Api.StaticWebAssets.xml
 F:\Proyectos .Net\Prueba-Practica-Autoestrada\Productos\Producto.Api\obj\Debug\net5.0\scopedcss\bundle\Producto.Api.styles.css
@@ -151,3 +150,4 @@ F:\Proyectos .Net\Prueba-Practica-Autoestrada\Productos\Producto.Api\obj\Debug\n
 F:\Proyectos .Net\Prueba-Practica-Autoestrada\Productos\Producto.Api\obj\Debug\net5.0\ref\Producto.Api.dll
 F:\Proyectos .Net\Prueba-Practica-Autoestrada\Productos\Producto.Api\obj\Debug\net5.0\Producto.Api.pdb
 F:\Proyectos .Net\Prueba-Practica-Autoestrada\Productos\Producto.Api\obj\Debug\net5.0\Producto.Api.genruntimeconfig.cache
+F:\Proyectos .Net\Prueba-Practica-Autoestrada\Productos\Producto.Api\obj\Debug\net5.0\Producto.Api.MvcApplicationPartsAssemblyInfo.cs

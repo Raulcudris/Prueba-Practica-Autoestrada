@@ -25,24 +25,24 @@ namespace Producto.Api.Controllers
         //Inyeccion de Dependencia
         private readonly IProductsService _productService;
         private readonly IMapper _mapper;
-        private readonly IUriServiceProducts _uriServiceProduct;
+        private readonly IUriService _uriService;
 
 
         //Inyeccion de Dependencia
-        public ProductsController(IProductsService productService, IMapper mapper, IUriServiceProducts uriServiceProducts)
+        public ProductsController(IProductsService productService, IMapper mapper, IUriService uriService)
         {
             _productService = productService;
             _mapper = mapper;
-            _uriServiceProduct = uriServiceProducts;
+            _uriService = uriService;
         }
 
         [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(ApiResponse<IEnumerable<ProductsDto>>))]
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
         //Buscar todos los productos Creados base de Datos
         [HttpGet(Name = nameof(GetProducts))]
-        public IActionResult GetProducts([FromQuery] ProductsQueryFilter filtersProducts)
+        public IActionResult GetProducts([FromQuery] ProductsQueryFilter filters)
         {
-            var products = _productService.GetProducts(filtersProducts);
+            var products = _productService.GetProducts(filters);
             var productsDtos = _mapper.Map<IEnumerable<ProductsDto>>(products);
 
             var metadata = new Metadata
@@ -51,8 +51,8 @@ namespace Producto.Api.Controllers
                 PageSize = products.PageSize,
                 CurrentPage = products.CurrentPage,
                 TotalPages = products.TotalPages,
-                NextPageUrl = _uriServiceProduct.GetProductPaginationUri(filtersProducts, Url.RouteUrl(nameof(GetProducts))).ToString(),
-                PreviousPageUrl = _uriServiceProduct.GetProductPaginationUri(filtersProducts, Url.RouteUrl(nameof(GetProducts))).ToString()
+                NextPageUrl = _uriService.GetPostPaginationUri(filters, Url.RouteUrl(nameof(GetProducts))).ToString(),
+                PreviousPageUrl = _uriService.GetPostPaginationUri(filters, Url.RouteUrl(nameof(GetProducts))).ToString()
             };
 
             var response = new ApiResponse<IEnumerable<ProductsDto>>(productsDtos)
@@ -95,7 +95,7 @@ namespace Producto.Api.Controllers
         public async Task<IActionResult> UpdateProduct(int id, ProductsDto productsDto)
         {
             var product = _mapper.Map<Products>(productsDto);
-            product.Producto_Id = id;
+            product.Id = id;
 
            var result = await _productService.UpdateProduct(product);
 

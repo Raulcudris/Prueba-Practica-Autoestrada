@@ -10,16 +10,19 @@ using System.Threading.Tasks;
 
 namespace Producto.Infrastructure.Repositories
 {
-    public class ProductsRepository : BaseRepositoryProduct<Products>, IProductsRepository
+    public class ProductsRepository : BaseRepository<Products>, IProductsRepository
     {
-        public ProductsRepository(ProductoApiContext context): base(context){ }
+        public ProductsRepository(ProductoApiContext context): base(context)
+        {
 
-        public Task<bool> DeleteProduct(int productId)
+        }
+
+        public Task<bool> DeleteProduct(int id)
         {
             throw new NotImplementedException();
         }
 
-        public Task<Products> GetProduct(int productId)
+        public Task<Products> GetProduct(int id)
         {
             throw new NotImplementedException();
         }
@@ -31,7 +34,7 @@ namespace Producto.Infrastructure.Repositories
 
         public async Task<IEnumerable<Products>> GetProductsById(int productId)
         {
-            return await _entities.Where(x => x.Producto_Id == productId).ToListAsync();
+            return await _entities.Where(x => x.Id == productId).ToListAsync();
         }
 
         public Task InsertProduct(Products products)
@@ -43,6 +46,5 @@ namespace Producto.Infrastructure.Repositories
         {
             throw new NotImplementedException();
         }
-    
     }
 }
