@@ -13,15 +13,12 @@ namespace Producto.Infrastructure.Repositories
     {
         private readonly ProductoApiContext _context;
         private readonly IProductsRepository _productsRepository;
-        private readonly IRepository<Providers> _providersRepository;
 
         public UnitOfWork(ProductoApiContext context)
         {
             _context = context;
         }
         public IProductsRepository ProductsRepository => _productsRepository ?? new ProductsRepository(_context);
-
-        public IRepository<Providers> ProvidersRepository => _providersRepository ?? new BaseRepository<Providers>(_context);
 
         public void Dispose()
         {

@@ -11,7 +11,7 @@ namespace Producto.Core.Entities
     {
 
         //Codigo del Producto
-        public int Id { get; set; }
+        public int Producto_Id { get; set; }
 
         public string Descripcion { get; set; }
 

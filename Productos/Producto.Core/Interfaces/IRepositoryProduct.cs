@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Producto.Core.Interfaces
 {
-    public  interface IRepositoryProduct<T> where T : BaseEntityProduct 
+    public  interface IRepositoryProduct<T> where T : BaseEntity 
     {
         IEnumerable<T> GetAll();
         Task<T> GetById(int id);

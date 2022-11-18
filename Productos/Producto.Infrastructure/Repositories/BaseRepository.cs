@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Producto.Infrastructure.Repositories
 {
-    public class BaseRepository<T> : IRepository<T> where T : BaseEntity
+    public class BaseRepository<T> : IRepositoryProduct<T> where T : BaseEntity
     {
         protected readonly ProductoApiContext _context;
         protected readonly DbSet<T> _entities;

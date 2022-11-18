@@ -9,7 +9,7 @@ namespace Producto.Infrastructure.Interfaces
 {
          public interface IUriService
         {
-            Uri GetPostPaginationUri(ProductsQueryFilter filter, string actionUrl);
+            Uri GetProductPaginationUri(ProductsQueryFilter filter, string actionUrl);         
         }
     
 }

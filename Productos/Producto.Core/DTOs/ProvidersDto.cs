@@ -9,7 +9,6 @@ namespace Producto.Core.DTOs
 {
     public class ProvidersDto
     {
-        public int Id { get; set; }
         //Nombre del Proveedor
         [Required]
         public string Nombre { get; set; }

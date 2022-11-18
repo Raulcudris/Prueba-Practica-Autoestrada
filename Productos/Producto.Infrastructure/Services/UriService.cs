@@ -16,11 +16,11 @@ namespace Producto.Infrastructure.Services
             _baseUri = baseUri;
         }
 
-        public Uri GetPostPaginationUri(ProductsQueryFilter filter, string actionUrl)
+        public Uri GetProductPaginationUri(ProductsQueryFilter filter, string actionUrl)
         {
             string baseUrl = $"{_baseUri}{actionUrl}";
             return new Uri(baseUrl);
-        }
+        }    
 
     }
 }
