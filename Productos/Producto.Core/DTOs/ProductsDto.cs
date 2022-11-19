@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Producto.Core.Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -9,6 +10,11 @@ namespace Producto.Core.DTOs
 {
     public class ProductsDto
     {
+        public ProductsDto()
+        {
+            Providers = new HashSet<Providers>();
+        }
+
         [Required]
         //Descripcion
         public string Descripcion { get; set; }
@@ -24,5 +30,7 @@ namespace Producto.Core.DTOs
         [Required]
         //Codigo del Proveedor
         public int Codigo_Proveedor { get; set; }
+
+        public virtual ICollection<Providers> Providers { get; set; }
     }
 }
