@@ -26,6 +26,9 @@ namespace Producto.Api.Controllers
         private readonly IProductsService _productService;
         private readonly IMapper _mapper;
         private readonly IUriService _uriServiceProduct;
+        private IProductsService productService;
+        private IUriService uriServiceProduct;
+        private IMapper mapper;
 
 
         //Inyeccion de Dependencia
@@ -34,6 +37,13 @@ namespace Producto.Api.Controllers
             _productService = productService;
             _mapper = mapper;
             _uriServiceProduct = uriServiceProducts;
+        }
+
+        public ProductsController(IProductsService productService, IUriService uriServiceProduct, IMapper mapper)
+        {
+            this.productService = productService;
+            this.uriServiceProduct = uriServiceProduct;
+            this.mapper = mapper;
         }
 
         [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(ApiResponse<IEnumerable<ProductsDto>>))]
