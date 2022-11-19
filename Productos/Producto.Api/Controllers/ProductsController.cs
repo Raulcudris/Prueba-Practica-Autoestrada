@@ -39,13 +39,6 @@ namespace Producto.Api.Controllers
             _uriServiceProduct = uriServiceProducts;
         }
 
-        public ProductsController(IProductsService productService, IUriService uriServiceProduct, IMapper mapper)
-        {
-            this.productService = productService;
-            this.uriServiceProduct = uriServiceProduct;
-            this.mapper = mapper;
-        }
-
         [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(ApiResponse<IEnumerable<ProductsDto>>))]
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
         //Buscar todos los productos Creados base de Datos

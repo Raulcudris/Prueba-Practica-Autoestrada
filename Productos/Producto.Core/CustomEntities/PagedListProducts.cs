@@ -17,6 +17,7 @@ namespace Producto.Core.CustomEntities
         public bool HasNextPage => CurrentPage < TotalPages;
         public int? NextPageNumber => HasNextPage ? CurrentPage + 1 : (int?)null;
         public int? PreviousPageNumber => HasPreviousPage ? CurrentPage - 1 : (int?)null;
+
         public PagedListProducts(List<T> items, int count, int pageNumber, int pageSize)
         {
             TotalCount = count;

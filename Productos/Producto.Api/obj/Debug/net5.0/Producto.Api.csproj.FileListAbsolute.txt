@@ -140,6 +140,7 @@ F:\Proyectos .Net\Prueba-Practica-Autoestrada\Productos\Producto.Api\obj\Debug\n
 F:\Proyectos .Net\Prueba-Practica-Autoestrada\Productos\Producto.Api\obj\Debug\net5.0\Producto.Api.AssemblyInfoInputs.cache
 F:\Proyectos .Net\Prueba-Practica-Autoestrada\Productos\Producto.Api\obj\Debug\net5.0\Producto.Api.AssemblyInfo.cs
 F:\Proyectos .Net\Prueba-Practica-Autoestrada\Productos\Producto.Api\obj\Debug\net5.0\Producto.Api.csproj.CoreCompileInputs.cache
+F:\Proyectos .Net\Prueba-Practica-Autoestrada\Productos\Producto.Api\obj\Debug\net5.0\Producto.Api.MvcApplicationPartsAssemblyInfo.cs
 F:\Proyectos .Net\Prueba-Practica-Autoestrada\Productos\Producto.Api\obj\Debug\net5.0\Producto.Api.MvcApplicationPartsAssemblyInfo.cache
 F:\Proyectos .Net\Prueba-Practica-Autoestrada\Productos\Producto.Api\obj\Debug\net5.0\staticwebassets\Producto.Api.StaticWebAssets.Manifest.cache
 F:\Proyectos .Net\Prueba-Practica-Autoestrada\Productos\Producto.Api\obj\Debug\net5.0\staticwebassets\Producto.Api.StaticWebAssets.xml

@@ -1,3 +1,4 @@
+F:\Proyectos .Net\Prueba-Practica-Autoestrada\Productos\ControllerTesting\bin\Debug\net5.0\CoverletSourceRootsMapping
 F:\Proyectos .Net\Prueba-Practica-Autoestrada\Productos\ControllerTesting\bin\Debug\net5.0\testhost.dll
 F:\Proyectos .Net\Prueba-Practica-Autoestrada\Productos\ControllerTesting\bin\Debug\net5.0\testhost.exe
 F:\Proyectos .Net\Prueba-Practica-Autoestrada\Productos\ControllerTesting\bin\Debug\net5.0\Microsoft.TestPlatform.PlatformAbstractions.dll
@@ -11,6 +12,7 @@ F:\Proyectos .Net\Prueba-Practica-Autoestrada\Productos\ControllerTesting\bin\De
 F:\Proyectos .Net\Prueba-Practica-Autoestrada\Productos\ControllerTesting\bin\Debug\net5.0\ControllerTesting.dll
 F:\Proyectos .Net\Prueba-Practica-Autoestrada\Productos\ControllerTesting\bin\Debug\net5.0\ref\ControllerTesting.dll
 F:\Proyectos .Net\Prueba-Practica-Autoestrada\Productos\ControllerTesting\bin\Debug\net5.0\ControllerTesting.pdb
+F:\Proyectos .Net\Prueba-Practica-Autoestrada\Productos\ControllerTesting\bin\Debug\net5.0\Castle.Core.dll
 F:\Proyectos .Net\Prueba-Practica-Autoestrada\Productos\ControllerTesting\bin\Debug\net5.0\Microsoft.VisualStudio.CodeCoverage.Shim.dll
 F:\Proyectos .Net\Prueba-Practica-Autoestrada\Productos\ControllerTesting\bin\Debug\net5.0\Microsoft.TestPlatform.CoreUtilities.dll
 F:\Proyectos .Net\Prueba-Practica-Autoestrada\Productos\ControllerTesting\bin\Debug\net5.0\Microsoft.VisualStudio.TestPlatform.ObjectModel.dll
@@ -18,10 +20,12 @@ F:\Proyectos .Net\Prueba-Practica-Autoestrada\Productos\ControllerTesting\bin\De
 F:\Proyectos .Net\Prueba-Practica-Autoestrada\Productos\ControllerTesting\bin\Debug\net5.0\Microsoft.TestPlatform.CrossPlatEngine.dll
 F:\Proyectos .Net\Prueba-Practica-Autoestrada\Productos\ControllerTesting\bin\Debug\net5.0\Microsoft.TestPlatform.Utilities.dll
 F:\Proyectos .Net\Prueba-Practica-Autoestrada\Productos\ControllerTesting\bin\Debug\net5.0\Microsoft.VisualStudio.TestPlatform.Common.dll
+F:\Proyectos .Net\Prueba-Practica-Autoestrada\Productos\ControllerTesting\bin\Debug\net5.0\Moq.dll
 F:\Proyectos .Net\Prueba-Practica-Autoestrada\Productos\ControllerTesting\bin\Debug\net5.0\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
 F:\Proyectos .Net\Prueba-Practica-Autoestrada\Productos\ControllerTesting\bin\Debug\net5.0\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
 F:\Proyectos .Net\Prueba-Practica-Autoestrada\Productos\ControllerTesting\bin\Debug\net5.0\Newtonsoft.Json.dll
 F:\Proyectos .Net\Prueba-Practica-Autoestrada\Productos\ControllerTesting\bin\Debug\net5.0\NuGet.Frameworks.dll
+F:\Proyectos .Net\Prueba-Practica-Autoestrada\Productos\ControllerTesting\bin\Debug\net5.0\System.Diagnostics.EventLog.dll
 F:\Proyectos .Net\Prueba-Practica-Autoestrada\Productos\ControllerTesting\bin\Debug\net5.0\cs\Microsoft.TestPlatform.CoreUtilities.resources.dll
 F:\Proyectos .Net\Prueba-Practica-Autoestrada\Productos\ControllerTesting\bin\Debug\net5.0\cs\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
 F:\Proyectos .Net\Prueba-Practica-Autoestrada\Productos\ControllerTesting\bin\Debug\net5.0\de\Microsoft.TestPlatform.CoreUtilities.resources.dll
@@ -87,6 +91,9 @@ F:\Proyectos .Net\Prueba-Practica-Autoestrada\Productos\ControllerTesting\bin\De
 F:\Proyectos .Net\Prueba-Practica-Autoestrada\Productos\ControllerTesting\bin\Debug\net5.0\zh-Hant\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
 F:\Proyectos .Net\Prueba-Practica-Autoestrada\Productos\ControllerTesting\bin\Debug\net5.0\zh-Hant\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
 F:\Proyectos .Net\Prueba-Practica-Autoestrada\Productos\ControllerTesting\bin\Debug\net5.0\zh-Hant\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+F:\Proyectos .Net\Prueba-Practica-Autoestrada\Productos\ControllerTesting\bin\Debug\net5.0\runtimes\win\lib\netcoreapp2.0\System.Diagnostics.EventLog.dll
+F:\Proyectos .Net\Prueba-Practica-Autoestrada\Productos\ControllerTesting\bin\Debug\net5.0\Producto.Core.dll
+F:\Proyectos .Net\Prueba-Practica-Autoestrada\Productos\ControllerTesting\bin\Debug\net5.0\Producto.Core.pdb
 F:\Proyectos .Net\Prueba-Practica-Autoestrada\Productos\ControllerTesting\obj\Debug\net5.0\ControllerTesting.csproj.AssemblyReference.cache
 F:\Proyectos .Net\Prueba-Practica-Autoestrada\Productos\ControllerTesting\obj\Debug\net5.0\ControllerTesting.GeneratedMSBuildEditorConfig.editorconfig
 F:\Proyectos .Net\Prueba-Practica-Autoestrada\Productos\ControllerTesting\obj\Debug\net5.0\ControllerTesting.AssemblyInfoInputs.cache

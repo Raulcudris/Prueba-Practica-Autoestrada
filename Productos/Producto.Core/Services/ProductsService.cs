@@ -55,8 +55,7 @@ namespace Producto.Core.Services
             if (products.Fecha_Fabricacion >= products.Fecha_Validez)
             {
                 throw new BusinessException(" La fecha de fabricación no puede ser mayor o igual a la fecha de vencimiento.");
-            }
-                     
+            }                   
 
             await _unitOfWorkProduct.ProductsRepository.Add(products);
             await _unitOfWorkProduct.SaveChangesAsync();
